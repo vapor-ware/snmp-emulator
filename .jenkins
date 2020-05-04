@@ -1,0 +1,45 @@
+pipeline {
+
+  agent any
+
+  environment {
+    IMAGE_NAME = 'vaporio/snmp-emulator'
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Verify Image Build') {
+      steps {
+        sh '''
+          docker build \
+            --label build_date=$(date -u +%Y-%m-%dT%T 2> /dev/null) \
+            --label version=$(python setup.py --version) \
+            --label commit=$(git rev-parse --short HEAD 2> /dev/null || true) \
+             -t ${IMAGE_NAME}:canary .
+        '''
+      }
+    }
+
+    stage('Publish "latest" Image (master)') {
+      when {
+        branch 'master'
+      }
+      steps {
+        withDockerRegistry(registry: [credentialsId: 'vio-docker-hub']) {
+          sh '''
+            docker build \
+              --label build_date=$(date -u +%Y-%m-%dT%T 2> /dev/null) \
+              --label version=$(python setup.py --version) \
+              --label commit=$(git rev-parse --short HEAD 2> /dev/null || true) \
+              -t ${IMAGE_NAME}:latest .
+          '''
+        }
+      }
+    }
+  }
+}
