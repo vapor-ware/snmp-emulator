@@ -58,12 +58,12 @@ Usage: /usr/local/bin/snmpsimd.py [--help]
 ```
 
 Pass in your desired configuration via these flags. You can select which MIB to use
-by setting the `--data-dir` option. The snmpwalks defined in the [`mibs/`] subdirectory
+by setting the `--data-dir` option. The snmpwalks defined in the [`mibs/`](mibs/) subdirectory
 are mounted into the container at `/home/snmpsim/mibs`. The image working directory is
 `/home/snmpsim`, so to specify the UPS MIB (along with some SNMPv3 config), for example:
 
 ```
-$ docker run etd/snmpsim \
+$ docker run vaporio/snmp-emulator \
     --data-dir=mibs/ups \
     --agent-udpv4-endpoint=0.0.0.0:1024 \
     --v3-user=simulator \
