@@ -14,6 +14,8 @@ docker pull vaporio/snmp-emulator
 
 ## Running
 
+TODO: Fix all of this.
+
 `snmpsim` is run within the container via the [`run.sh`](run.sh) script. It provides some lightweight
 initial context logging and then kicks off the simulator with the following arguments:
 
@@ -26,6 +28,8 @@ initial context logging and then kicks off the simulator with the following argu
 --v3-priv-key=privatus
 --v3-priv-proto=AES
 ```
+
+TODO: Check this. IT'S WRONG.
 
 Currently, the snmp-emulator does not support customizing these configuration options, so ensure any
 setup which uses the emulator adheres to the configuration specified above.
