@@ -9,5 +9,5 @@ library identifier: 'vapor@1.20.0', retriever: modernSCM([
 
 // declared in vapor-ware/ci-shared/vars/dockerBuildPipeline.groovy
 dockerBuildPipeline([
-  "image": "vaporio/snmp-emulator",
+    "image": "docker.io/vaporio/snmp-emulator",
 ])
