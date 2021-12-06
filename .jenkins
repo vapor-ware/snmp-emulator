@@ -11,5 +11,4 @@ library identifier: 'vapor@1.20.0', retriever: modernSCM([
 // declared in vapor-ware/ci-shared/vars/golangPipeline.groovy
 golangPipeline([
   'image': 'docker.io/vaporio/snmp-plugin',
-  'mainBranch': 'mhink-fix-snmp', // TODO: Remove. This should "trick" the Jenkins pipeline into building a latest image off of my branch.
 ])
