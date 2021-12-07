@@ -21,4 +21,4 @@ USER snmp
 
 EXPOSE 1024/udp
 
-ENTRYPOINT ["./run.sh"]
+ENTRYPOINT ["start_snmp_emulator.sh"]

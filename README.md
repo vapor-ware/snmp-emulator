@@ -34,7 +34,7 @@ The `--data-dir` argument takes a value passed to the container. This should be 
 To configure the emulator to run with data from the Pxgms (Eaton) UPS, nulling out the log file:
 
 ```
-$ docker run vaporio/snmp-emulator snmp_data/device/ups/pxgms_ups/public.snmpwalk 1024 ../dev/null  V3 authPriv SHA AES
+$ docker run vaporio/snmp-emulator snmp_data/device/ups/pxgms_ups/public.snmpwalk 1024 ../dev/null V3 authPriv SHA AES
 ```
 
 Note that the agent endpoint always uses the host `0.0.0.0` in order for the container
