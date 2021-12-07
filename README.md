@@ -37,5 +37,5 @@ To configure the emulator to run with data from the Pxgms (Eaton) UPS, nulling o
 $ docker run vaporio/snmp-emulator snmp_data/device/ups/pxgms_ups/public.snmpwalk 1024 ../dev/null V3 authPriv SHA AES
 ```
 
-Note that the agent endpoint always uses the host `0.0.0.0` in order for the container
+The agent endpoint always uses the host `0.0.0.0` in order for the container
 to properly expose the endpoint.
