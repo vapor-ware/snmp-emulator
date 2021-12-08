@@ -1,4 +1,4 @@
-FROM vaporio/python:3.8-slim
+FROM docker.io/vaporio/python:3.9-slim
 
 RUN pip install --no-cache-dir -I snmpsim
 
@@ -21,4 +21,4 @@ USER snmp
 
 EXPOSE 1024/udp
 
-ENTRYPOINT ["./run.sh"]
+ENTRYPOINT ["./start_snmp_emulator.sh"]

@@ -1,14 +1,13 @@
 #!/usr/bin/env groovy
 
 // Include this shared CI repository to load script helpers and libraries.
-library identifier: 'vapor@1.19.2', retriever: modernSCM([
+library identifier: 'vapor@1.20.2', retriever: modernSCM([
     $class: 'GitSCMSource',
     remote: 'https://github.com/vapor-ware/ci-shared.git',
     credentialsId: 'vio-bot-gh',
 ])
 
-
 // declared in vapor-ware/ci-shared/vars/dockerBuildPipeline.groovy
 dockerBuildPipeline([
-    "image": "vaporio/snmp-emulator",
+    "image": "docker.io/vaporio/snmp-emulator",
 ])
