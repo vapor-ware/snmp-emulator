@@ -1,4 +1,5 @@
-FROM docker.io/vaporio/python:3.9-slim
+FROM docker.io/ubuntu/18.04
+#FROM docker.io/vaporio/python:3.9-slim
 
 RUN pip install --no-cache-dir -I snmpsim
 
